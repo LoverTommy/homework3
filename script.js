@@ -18,8 +18,8 @@ function Vowels(word) {
         }
     }
     
-    console.log(numLetters);
+    return numLetters;
 }
 
-Vowels(getWord);
+console.log (Vowels(getWord));
 
