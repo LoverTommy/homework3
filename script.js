@@ -24,35 +24,27 @@
 // console.log (Vowels(getWord));
 
 
-// const values=[55,77,55,66,77];
-// let used={}; // ключ объекта - число, которое уже встречалось
-// for ( let i=0; i<values.length; i++ ) {
-//     const value=values[i]; // очередное значение
-//     if ( value in used ) // встречалось ли оно?
-//         continue; // если да - всё, берём следующее
-//     used[value]=true; // если нет - запоминаем, что это значение уже встречалось
-//     console.log(value); // выводим его в консоль
-// }
-
-function randomDiap(n,m) {
-    return Math.floor(Math.random()*(m-n+1))+n;
+function randomDiap(n, m) {
+   return Math.floor(Math.random() * (m - n + 1)) + n;
 }
-
+ 
 function mood(colorsCount) {
-const colors=[ '', 'красный', 'оранжевый', 'жёлтый', 'зелёный', 'голубой', 'синий', 'фиолетовый' ];
-let color = {};
+   const colors = ['', 'красный', 'оранжевый', 'жёлтый', 'зелёный', 'голубой', 'синий', 'фиолетовый'];
+   const color = {};
+   console.log('цветов: ' + colorsCount);
+ 
+   for (;Object.keys(color).length < colorsCount;) {
+      let n = randomDiap(1, 7);
+      let colorName = colors[n];
+      color[colorName] = colorName;
+   }
 
-console.log( 'цветов: ' + colorsCount );
-for (Object.keys(color).length; Object.keys(color).length < colorsCount;) {
-    const n=randomDiap(1,7);
-    const colorName=colors[n];
-    color [colorName] = colorName;
+   for ( let d in color ) {
+      console.log( d );
+   }
 }
-
-return color;
-}
-
-console.log(mood(3));
-
+ 
+mood(3);
+ 
 
 
