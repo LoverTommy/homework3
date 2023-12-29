@@ -33,10 +33,13 @@ function mood(colorsCount) {
    const color = {};
    console.log('цветов: ' + colorsCount);
  
-   for (;Object.keys(color).length < colorsCount;) {
+   for (let i = 0; i < colorsCount;) {
       let n = randomDiap(1, 7);
       let colorName = colors[n];
+      if(colorName in color)
+         continue;
       color[colorName] = colorName;
+      i++
    }
 
    for ( let d in color ) {
@@ -44,7 +47,7 @@ function mood(colorsCount) {
    }
 }
  
-mood(3);
+mood(4);
  
 
 
